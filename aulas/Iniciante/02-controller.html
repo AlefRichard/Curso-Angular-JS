@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Aula 2</title>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>-->
+	<!-- Versão antiga -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="UsuariosController">
+		<p>
+			Nome <input type="text" ng-model="usuario.0.nome">
+			Sobrenome <input type="text" ng-model="usuario.0.sobrenome">
+			<br><br>
+			Cidade <input type="text" ng-model="usuario.0.cidade">
+			Senha <input type="password" ng-model="usuario.0.senha">
+		</p>
+		<p>
+			Olá {{usuario.0.nome}} {{usuario.0.sobrenome}}! Você mora em {{usuario.0.cidade}}, e sua senha é {{usuario.0.senha}}.
+		</p>
+	</div>
+	<script>
+		var UsuariosController = function ($scope){
+			$scope.usuario = [{
+				'nome':'Alef',
+				'sobrenome':'Richard',
+				'cidade':'Belo Horizonte',
+				'senha':'123'
+			}];
+		};
+	</script>
+</body>
+</html>

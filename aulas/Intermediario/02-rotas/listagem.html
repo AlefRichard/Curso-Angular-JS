@@ -1,0 +1,15 @@
+<h1>Lista de usuários</h1>
+<div>
+	<ul ng-repeat="v in usuarios">
+		<li>
+			{{v.nome}} {{v.sobrenome}} - 
+			<a href="#/editar/{{$index}}" class="btn btn-success btn-xs">
+				<span class="glyphicon glyphicon-pencil"></span>
+			</a>
+			<a href="" ng-click="remover($index, v.nome)" class="btn btn-danger btn-xs">
+				<span class="glyphicon glyphicon-trash"></span>
+			</a>
+		</li>
+	</ul>
+</div>
+<a href="#/adicionar" class="btn btn-primary">Novo usuário</a>

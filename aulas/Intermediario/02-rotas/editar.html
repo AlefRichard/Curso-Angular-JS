@@ -1,0 +1,9 @@
+<h1>Editando {{usuario.nome}}!!!</h1>
+<form action="">
+	<p>{{retorno}}</p>
+	Nome: <input type="text" ng-model="usuario.nome"><br>
+	Sobrenome: <input type="text" ng-model="usuario.sobrenome"><br>
+	Cidade: <input type="text" ng-model="usuario.cidade"><br>
+	Senha: <input type="text" ng-model="usuario.senha"><br>
+	<button ng-click="edit()">Atualizar</button> - <a href="#/">Ver outros</a>
+</form>

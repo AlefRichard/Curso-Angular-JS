@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Aula 4</title>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>-->
+	<!-- Versão antiga -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="UsuariosController">
+		<h3>Novo Usuário</h3>
+		<p>
+			Nome <input type="text" ng-model="usuario.nome">
+			Sobrenome <input type="text" ng-model="usuario.sobrenome">
+			<br><br>
+			Cidade <input type="text" ng-model="usuario.cidade">
+			Senha <input type="password" ng-model="usuario.senha">
+			<br><br>
+			<button type="sumit" ng-click="adicionar()">Adicionar</button>
+		</p>
+		<hr>
+		<h3>Usuários Cadastrados</h3>
+		<div ng-repeat="a in usuarios">
+			<p>
+				Olá {{a.nome}} {{a.sobrenome}}! Você mora em {{a.cidade}}, e sua senha é {{a.senha}}.
+			</p>
+			<hr>
+		</div>
+	</div>
+	<script>
+		var UsuariosController = function($scope){
+			$scope.usuarios = [
+				{
+					'nome':'Alef',
+					'sobrenome':'Richard',
+					'cidade':'Belo Horizonte',
+					'senha':'123'
+				},
+				{
+					'nome':'Ferreira',
+					'sobrenome':'Victor',
+					'cidade':'Vespasiano',
+					'senha':'forte e vingador'
+				}
+			];
+
+			$scope.adicionar = function() {
+				$scope.usuarios.push($scope.usuario);
+				$scope.usuario = '';
+			}
+		};
+	</script>
+</body>
+</html>
